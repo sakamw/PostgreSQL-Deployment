@@ -111,11 +111,31 @@ docker start postgres-container
 1. Copy Your SQL File Into the Container:
 
 ```bash
-docker cp my_postgres_db.sql postgres-container:/my_postgres.sql
+docker cp "C:\Users\jst\Documents\backup.sql" postgres-container:/backup.sql
 ```
 
-1. Run the SQL Script Inside the Container
+1. Run the SQL Script Inside the Container To Restore the Database
 
 ```bash
-docker exec -it postgres-container psql -U root -d mydatabase -f /my_postgres.sql
+docker exec -i postgres-container psql -U root -d postgres -f /backup.sql
+```
+
+1. Verify the Tables
+
+```bash
+docker exec -it postgres-container psql -U root -d postgres -c "\dt"
+```
+
+### Status Check
+
+Run an interactive terminal session:
+
+```bash
+docker exec -it postgres-container bash
+```
+
+To access the database directly:
+
+```bash
+psql -U root -d postgres
 ```
