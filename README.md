@@ -93,3 +93,29 @@ To exit from the psql when done simply run:
 ```
 
 > This will return you to your regular shell. (outside the container)
+
+## Instance
+
+Assuming you database file is like:
+
+`my_postgres.sql`:
+
+1. Run the Postgres Container:
+
+```bash
+docker start postgres-container
+```
+
+> If not running yet follow step 2 for `Deploying PostgreSQL with Docker`
+
+1. Copy Your SQL File Into the Container:
+
+```bash
+docker cp my_postgres_db.sql postgres-container:/my_postgres.sql
+```
+
+1. Run the SQL Script Inside the Container
+
+```bash
+docker exec -it postgres-container psql -U root -d mydatabase -f /my_postgres.sql
+```
