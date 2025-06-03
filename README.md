@@ -4,6 +4,10 @@ In this session I will teach you how to deploy [PostgreSQL](https://www.postgres
 
 ## Deploying PostgreSQL with Docker
 
+Deployment refers to installing and runnig the database software(eg, MySQL, Postgres), configuring users passwords and databases, exposing the service so applications can connect.
+
+Docker is a platform that packages applications and their dependancies into containers. Containers are lightweight, portable and consistent across environments perfect for development, testing and production.
+
 ### Step 1: Search the Image
 
 Begin by searching the Postgres image from the Docker Registry with the following command at the terminal.
